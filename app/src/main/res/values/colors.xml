@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#80008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#4DE91E63</color>
+    <color name="colorSkyBlue">#CC5996F3</color>
+    <color name="colorRed">#C3DD5D67</color>
+    <color name="colorOrange">#80F84E1D</color>
+    <color name="colorVoilet">#EB754CC5</color>
+    <color name="colorDarkRed">#DD1C0F</color>
+    <color name="colorGreen">#2F5DE463</color>
+    <color name="colorLightSkyBlue">#B503A9F4</color>
+    <color name="colorDarkerRed">#D8FF0319</color>
+    <color name="colorLightOrange">#E2886E</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorBlack">#272525</color>
+    <color name="colorDarkWhite">#FCEDED</color>
+    <color name="colorBackSkyBlue">#B6E2FD</color>
+    <array name="colors">
+        <item>#CC5996F3</item>
+        <item>#C3DD5D67</item>
+        <item>#80F84E1D</item>
+        <item>#EB754CC5</item>
+        <item>#DD1C0F</item>
+        <item>#2F5DE463</item>
+        <item>#B503A9F4</item>
+        <item>#D8FF0319</item>
+        <item>#E2886E</item>
+        <item>#FFFFFF</item>
+        <item>#2196F3</item>
+    </array>
 </resources>
