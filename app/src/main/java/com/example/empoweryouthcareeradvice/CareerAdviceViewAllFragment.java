@@ -2,14 +2,12 @@ package com.example.empoweryouthcareeradvice;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +34,7 @@ public class CareerAdviceViewAllFragment extends Fragment {
     Integer[] imgProfile={R.drawable.coverbasic,R.drawable.coversecond,R.drawable.images,R.drawable.resumewriting,R.drawable.coverletterthree,R.drawable.writecoverlettertwo,R.drawable.writecoverletterthree,R.drawable.brilliantcoverletter,R.drawable.killcover,R.drawable.careerexperience};
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_career_advice_view_all_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_career_advice_view_all, container, false);
         ButterKnife.bind(this, view);
         initViewCategory1(view);
         return view;
@@ -51,7 +49,7 @@ public class CareerAdviceViewAllFragment extends Fragment {
       //  textView1=view.findViewById(R.id.cat1).findViewById(R.id.textView_title);
        // textViews1=view.findViewById(R.id.cat1).findViewById(R.id.textView_content);
       //  button1=view.findViewById(R.id.cat1).findViewById(R.id.button_read);
-        recyclerView=view.findViewById(R.id.cat1).findViewById(R.id.recyclerView_CoverLetter);
+        recyclerView=view.findViewById(R.id.recyclerView);
         ArrayList<CoverLetterModel> models=new ArrayList<>();
         for(int i=0;i<titlesContent.length;i++)
         {
