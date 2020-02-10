@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/career_advice_graph"
+    app:startDestination="@id/careerAdviceHomeFragment">
+
+    <fragment
+        android:id="@+id/careerAdviceHomeFragment"
+        android:name="myapp.com.careeradvice.CareerAdviceHomeFragment"
+        android:label="fragment_career_advice_home"
+        tools:layout="@layout/fragment_career_advice_home"
+        >
+        <action
+            android:id="@+id/action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments"
+            app:destination="@id/careerAdviceSummaryFragments" />
+    </fragment>
+  <fragment
+    android:id="@+id/careerAdviceSummaryFragments"
+    android:name="myapp.com.careeradvice.CareerAdviceSummaryFragment"
+    android:label="fragment_career_advice_summary"
+    tools:layout="@layout/fragment_career_advice_summary"
+    />
+</navigation>
