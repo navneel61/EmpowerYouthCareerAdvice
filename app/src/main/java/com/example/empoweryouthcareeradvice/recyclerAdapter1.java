@@ -12,16 +12,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class recyclerAdapter1 extends RecyclerView.Adapter<recyclerAdapter1.ViewHolder> {
-    ArrayList<Model1> resumeModels=new ArrayList<>();
+    ArrayList<CareerAdviceCategoryModel> resumeModels=new ArrayList<>();
     Context context;
     int type;
 
 
-    public recyclerAdapter1(Context context,ArrayList<Model1> resumeModels,int type)
+    public recyclerAdapter1(Context context, ArrayList<CareerAdviceCategoryModel> resumeModels, int type)
     {
         this.context=context;
         this.resumeModels=resumeModels;
@@ -37,14 +36,14 @@ public class recyclerAdapter1 extends RecyclerView.Adapter<recyclerAdapter1.View
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Model1 model = resumeModels.get(position);
+        CareerAdviceCategoryModel model = resumeModels.get(position);
 
         holder.imageView_C.setBackgroundResource(model.getImage());
-        holder.textView_C.setText(model.getTitle_Content());
+        holder.textView_C.setText(model.getTitle());
 
          if(type==0) {
 
-             holder.textView.setText(model.getText_Content());
+             holder.textView.setText(model.getDescription());
              holder.btn.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View view) {

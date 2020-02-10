@@ -1,7 +1,6 @@
 package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,28 +13,26 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnItemClick;
 
 public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<AdapterCareerAdviceCategoryView.ViewHolder> {
 
-    ArrayList<Model1> resumeModels;
+    ArrayList<CareerAdviceCategoryModel> resumeModels;
     Context context,contexts;
     //OnItemClick onItemClick;
     //NavController navController;
 
-    public AdapterCareerAdviceCategoryView(Context context,ArrayList<Model1> resumeModels)
+    public AdapterCareerAdviceCategoryView(Context context,ArrayList<CareerAdviceCategoryModel> resumeModels)
     {
         this.context=context;
         this.resumeModels=resumeModels;
 
     }
 
-   /* public AdapterCareerAdviceCategoryView(Context context,ArrayList<Model1> resumeModels,OnItemClick onItemClick)
+   /* public AdapterCareerAdviceCategoryView(Context context,ArrayList<CareerAdviceCategoryModel> resumeModels,OnItemClick onItemClick)
     {
         this.context=context;
         this.resumeModels=resumeModels;
@@ -61,19 +58,27 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
 //                    context.startActivity(new Intent(context, ResumeTipsHireActivity.class));
 //                }
 //            });
-            Model1 model = resumeModels.get(position);
+            CareerAdviceCategoryModel model = resumeModels.get(position);
             holder.imageView.setBackgroundResource(model.getImage());
-            holder.textTitle.setText(model.getTitle_Content());
+            holder.textTitle.setText(model.getTitle());
 
         }
         if (position == 3){
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
         holder.containerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
             }
         });

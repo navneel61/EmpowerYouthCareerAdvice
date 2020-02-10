@@ -45,13 +45,13 @@ public class ResumeTipsHireActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        ArrayList<Model1> models=new ArrayList<>();
+        ArrayList<CareerAdviceCategoryModel> models=new ArrayList<>();
         for(int i=0;i<img.length;i++)
         {
-            Model1 model1=new Model1();
-            model1.setText_Content(mainContent[i]);
+            CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
+            model1.setDescription(mainContent[i]);
             model1.setImage(img[i]);
-            model1.setTitle_Content(titleContent[i]);
+            model1.setTitle(titleContent[i]);
             models.add(model1);
 
         }

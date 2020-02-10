@@ -2,7 +2,6 @@ package com.example.empoweryouthcareeradvice;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +16,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.example.empoweryouthcareeradvice.AdapterCareerAdviceCategoryView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,7 +35,7 @@ public class CareerAdviceHomeFragment extends Fragment {
     private RecyclerView recyclerView1,recyclerView2,recyclerView3,recyclerView4,recyclerView5,recyclerView6,recyclerView7,recyclerView8,recyclerView9,recyclerView10,recyclerView11,recyclerView12;
     TextView textViewTitle;
     ImageView imageView;
-    ArrayList<Model1> list=new ArrayList<>();
+    ArrayList<CareerAdviceCategoryModel> list=new ArrayList<>();
     String categoryList[]={"How to write Cover Letter","Resume Tips","Job Interviews","Finding Ytour Dream Company","Finding Your Passion","Self Empowerment","Enterpreneurship","Job Search","Careeer Advancement","Networking","Personal Branding","Employers Corner"};
     Integer img[]={R.drawable.msg,R.drawable.resumetip,R.drawable.jobinterviews,R.drawable.findcompany,R.drawable.findpassion,R.drawable.selfimprovement,R.drawable.entrepreneurship,R.drawable.jobsearch,R.drawable.careeradvancement,R.drawable.networking,R.drawable.brand,R.drawable.employee};
 
@@ -93,19 +88,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews1(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("5 Easy Steps to Writing a Cover Letter");
+        model1.setTitle("5 Easy Steps to Writing a Cover Letter");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r2);
-        model2.setTitle_Content("How To Write A Cover Letter\n");
+        model2.setTitle("How To Write A Cover Letter\n");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r3);
-        model3.setTitle_Content("One Common Cover Letter Mistake to Avoid | My Secret Tip to Fix It");
+        model3.setTitle("One Common Cover Letter Mistake to Avoid | My Secret Tip to Fix It");
         list.add(model3);
         int[] rainbow= this.getResources().getIntArray(R.array.rainbow);
 
@@ -124,19 +119,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r2);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r3);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView2 = view.findViewById(R.id.cat2).findViewById(R.id.recyclerView);
@@ -151,19 +146,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews2(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView3= view.findViewById(R.id.cat3).findViewById(R.id.recyclerView);
@@ -178,19 +173,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews3(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView4 = view.findViewById(R.id.cat4).findViewById(R.id.recyclerView);
@@ -205,19 +200,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews4(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView5 = view.findViewById(R.id.cat5).findViewById(R.id.recyclerView);
@@ -231,19 +226,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews5(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView6 = view.findViewById(R.id.cat6).findViewById(R.id.recyclerView);
@@ -257,19 +252,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews6(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView7 = view.findViewById(R.id.cat7).findViewById(R.id.recyclerView);
@@ -283,19 +278,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews7(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView8 = view.findViewById(R.id.cat8).findViewById(R.id.recyclerView);
@@ -309,19 +304,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews8(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView9 = view.findViewById(R.id.cat9).findViewById(R.id.recyclerView);
@@ -335,19 +330,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews9(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView10 = view.findViewById(R.id.cat10).findViewById(R.id.recyclerView);
@@ -361,19 +356,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews10(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView11= view.findViewById(R.id.cat11).findViewById(R.id.recyclerView);
@@ -387,19 +382,19 @@ public class CareerAdviceHomeFragment extends Fragment {
     private void initviews11(View view)
 
     {
-        Model1 model1=new Model1();
+        CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
         model1.setImage(R.drawable.r1);
-        model1.setTitle_Content("30 Resume Tips to help you get hired");
+        model1.setTitle("30 Resume Tips to help you get hired");
         list.add(model1);
 
-        Model1 model2=new Model1();
+        CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
         model2.setImage(R.drawable.r1);
-        model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+        model2.setTitle("5 RESUME RED FLAGS TO AVOID");
         list.add(model2);
 
-        Model1 model3=new Model1();
+        CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
         model3.setImage(R.drawable.r1);
-        model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+        model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
         list.add(model3);
 
         recyclerView12 = view.findViewById(R.id.cat12).findViewById(R.id.recyclerView);

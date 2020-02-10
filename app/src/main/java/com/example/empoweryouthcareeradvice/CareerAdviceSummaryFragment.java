@@ -28,7 +28,7 @@ import java.util.ArrayList;
  */
 public class CareerAdviceSummaryFragment extends Fragment {
 
-NavController navController;
+    NavController navController;
     ImageView image;
     TextView textTitle,textSummary,textComments,textRelatedArticles,txtDescription;
     RecyclerView recyclerView;
@@ -71,21 +71,21 @@ NavController navController;
 
     }
          public void initviews(View view){
-             ArrayList<Model1> list=new ArrayList<>();
+             ArrayList<CareerAdviceCategoryModel> list=new ArrayList<>();
 
-             Model1 model1=new Model1();
+             CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
              model1.setImage(R.drawable.r1);
-             model1.setTitle_Content("30 Resume Tips to help you get hired");
+             model1.setTitle("30 Resume Tips to help you get hired");
              list.add(model1);
 
-             Model1 model2=new Model1();
+             CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
              model2.setImage(R.drawable.r2);
-             model2.setTitle_Content("5 RESUME RED FLAGS TO AVOID");
+             model2.setTitle("5 RESUME RED FLAGS TO AVOID");
              list.add(model2);
 
-             Model1 model3=new Model1();
+             CareerAdviceCategoryModel model3=new CareerAdviceCategoryModel();
              model3.setImage(R.drawable.r3);
-             model3.setTitle_Content(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
+             model3.setTitle(" 8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching");
              list.add(model3);
 
              recyclerView = view.findViewById(R.id.summaryFragment).findViewById(R.id.resumeRecyclerView);
