@@ -17,6 +17,18 @@
     <color name="colorBlack">#272525</color>
     <color name="colorDarkWhite">#FCEDED</color>
     <color name="colorBackSkyBlue">#B6E2FD</color>
+    <color name="colorhowtowritecoverletter">#98d5ff</color>
+    <color name="colorresumetips">#f29bb1</color>
+    <color name="colorjobinterviews">#f8d1a4</color>
+    <color name="colorfindingyourdreamcompany">#b874e8</color>
+    <color name="colorfindingyourpassion">#e45955</color>
+    <color name="colorselfempowerment">#8af3ba</color>
+    <color name="colorenterpreneurship">#9bd7fd</color>
+    <color name="colorjobsearch">#e35855</color>
+    <color name="colorcareeradvancement">#f8d0a4</color>
+    <color name="colornetworking">#b573e5</color>
+    <color name="colorpersonalbranding">#f4a0b6</color>
+    <color name="coloremployerscorner">#8af3ba</color>
     <array name="colors">
         <item>#CC5996F3</item>
         <item>#C3DD5D67</item>
