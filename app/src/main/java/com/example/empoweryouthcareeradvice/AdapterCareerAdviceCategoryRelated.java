@@ -2,6 +2,7 @@ package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
             }
         });
@@ -84,8 +86,6 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         TextView textViewDescription,textViewTitle,textViewRead,textViewTitleRelated,textViewDate;
         Button buttonRead;
         CardView cardView,cardViewRelated;
-        ImageView imgRelatedAticles;
-        TextView textViewRelatedArticleTitle;
 
         public ViewHolder(@NonNull View itemView) {
 

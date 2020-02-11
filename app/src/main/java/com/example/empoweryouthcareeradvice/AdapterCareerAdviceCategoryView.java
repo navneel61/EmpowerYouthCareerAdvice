@@ -1,6 +1,8 @@
 package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,14 +72,21 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         holder.containerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CareerAdviceCategoryModel model = resumeModels.get(position);
 
-                Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
+                Bundle bundle=new Bundle();
+                bundle.putInt("id",position);
+
+
+                Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
             }
         });
 
         holder.viewAllView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CareerAdviceCategoryModel model = resumeModels.get(position);
+
                 Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment);
             }
         });

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.ButterKnife;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class CareerAdviceSummaryFragment extends Fragment {
     RecyclerView recyclerView;
     Button btnComment,btnOriginalArticle;
     EditText commentBox;
+    int id=0;
     String titleContent[]={"30 RESUME TIPS TO HELP YOU GET HIRED","5 RESUME RED FLAGS TO AVOID","8 Resume Tips from a Former Hiring Manager — Jessica DW | Bright Space Coaching","3 RESUME TIPS YOU HAVEN’T HEARD BEFORE ","Resume Tips: How to Grab the Recruiter's Attention","Resume Tips: How to Grab the Recruiter's Attention","Top 8 Tips from a Professional Resume Writer","17 Things to Delete from Your Resume [Effective Immediately] - ForwardThink Careers","Apply for Jobs Quickly and Easily | How to Write a Master Resume\n","How to Nail it in a Job Interview • The Work Life Blend - Make Money Around Your Family\n","25 Tricky Interview Questions and How to Answer Them"
             ,"How to Ace an Interview: 8 Expert Tips\n"};
     String mainContent[]={"30 Resume Tips to Help You Get Hired - Advice from a fortune 500 recruiter and career coach","Your item_career_advice_related is your first impression with an employer, so it better be a good one. Recruiters are trained to scan your item_career_advice_related in a matter of seconds looking for ",
@@ -60,6 +62,8 @@ public class CareerAdviceSummaryFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_career_advice_summary, container, false);
         ButterKnife.bind(this, view);
         initviews(view);
+        id=getArguments().getInt("id");
+        Log.d("id is ", String.valueOf(id));
 
         return view;
 

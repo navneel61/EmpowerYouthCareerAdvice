@@ -7,6 +7,8 @@ public class CareerAdviceCategoryModel {
     private String title;
 
 
+
+
     public int getImage() {
         return image;
     }
