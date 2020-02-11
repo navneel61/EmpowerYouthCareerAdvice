@@ -21,21 +21,18 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
 
     ArrayList<CareerAdviceCategoryModel> coverLetterModels;
     Context context;
-    int type;
 
-    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> coverLetterModels, int type)
+    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> coverLetterModels)
     {
         this.context=context;
         this.coverLetterModels=coverLetterModels;
-        Log.d("conssize", String.valueOf(this.coverLetterModels.size()));
-        this.type=type;
     }
 
     @NonNull
     @Override
     public CoverLetters onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_related,parent,false);
+        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_summary_related,parent,false);
         return new CoverLetters(vie);
     }
 
@@ -44,19 +41,6 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         CareerAdviceCategoryModel model=coverLetterModels.get(position);
        holder.imageViewC.setImageResource(model.getImage());
         holder.textViewC.setText(model.getTitle());
-        Log.d("titleis",model.getTitle());
-        if(type==0)
-        {
-            holder.textView.setText(model.getDescription());
-            Log.d("type0size", String.valueOf(coverLetterModels.size()));
-            holder.textViewRead.setVisibility(View.GONE);
-        }
-        else if(type==1)
-        {
-            holder.textView.setText("07-NOV-2019");
-            holder.buttonRead.setVisibility(View.GONE);
-            Log.d("type1size", String.valueOf(coverLetterModels.size()));
-        }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,12 +66,9 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
 
             super(itemView);
             imageViewC=itemView.findViewById(R.id.image_view);
-            textView=itemView.findViewById(R.id.text_description);
+            textView=itemView.findViewById(R.id.datemonthyear);
             textViewC=itemView.findViewById(R.id.text_title);
-            buttonRead=itemView.findViewById(R.id.button_read);
             cardView=itemView.findViewById(R.id.cardview_read);
-          //  imgRelatedAticles=itemView.findViewById(R.id.image_view_related);
-          //  textViewRelatedArticleTitle=itemView.findViewById(R.id.text_title_related);
             textViewRead=itemView.findViewById(R.id.text_view_read);
         }
     }
