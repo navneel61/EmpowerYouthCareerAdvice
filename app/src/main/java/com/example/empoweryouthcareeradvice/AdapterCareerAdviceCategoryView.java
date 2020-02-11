@@ -2,7 +2,6 @@ package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,15 +21,15 @@ import butterknife.ButterKnife;
 
 public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<AdapterCareerAdviceCategoryView.ViewHolder> {
 
-    ArrayList<CareerAdviceCategoryModel> resumeModels;
-    Context context,contexts;
+    private final ArrayList<CareerAdviceCategoryModel> resumeModels;
+    private final String title;
     //OnItemClick onItemClick;
     //NavController navController;
 
-    public AdapterCareerAdviceCategoryView(Context context,ArrayList<CareerAdviceCategoryModel> resumeModels)
+    public AdapterCareerAdviceCategoryView(Context context,ArrayList<CareerAdviceCategoryModel> resumeModels,String title)
     {
-        this.context=context;
         this.resumeModels=resumeModels;
+        this.title=title;
 
     }
 
@@ -51,6 +50,8 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Bundle bundle=new Bundle();
+
 
         if (position!=3){
             //holder.txtDescription.setText(model.getText_Content());
@@ -69,26 +70,17 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
-        holder.containerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CareerAdviceCategoryModel model = resumeModels.get(position);
-
-                Bundle bundle=new Bundle();
-                bundle.putInt("id",position);
+        holder.containerView.setOnClickListener(view -> {
+            bundle.putInt("id",position);
 
 
-                Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
-            }
+            Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
         });
 
-        holder.viewAllView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CareerAdviceCategoryModel model = resumeModels.get(position);
+        holder.viewAllView.setOnClickListener(v -> {
 
-                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment);
-            }
+            bundle.putString("title",title);
+            Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment,bundle);
         });
 
 

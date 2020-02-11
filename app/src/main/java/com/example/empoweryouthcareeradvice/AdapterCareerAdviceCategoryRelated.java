@@ -1,8 +1,6 @@
 package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +16,9 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<AdapterCareerAdviceCategoryRelated.ViewHolder> {
-    ArrayList<CareerAdviceCategoryModel> resumeModels=new ArrayList<>();
-    Context context;
-    int type;
+    private ArrayList<CareerAdviceCategoryModel> resumeModels;
+    private final Context context;
+    private final int type;
 
 
     public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> resumeModels, int type)
@@ -40,15 +38,6 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CareerAdviceCategoryModel model = resumeModels.get(position);
-
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_careerAdviceSummaryFragments_self);
-
-            }
-        });
-
         if(type==0)
         {
             holder.imageViewC.setImageResource(model.getImage());
@@ -63,13 +52,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             holder.imageViewRelated.setImageResource(model.getImage());
             holder.textViewTitleRelated.setText(model.getTitle());
         }
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
-            }
-        });
+        holder.cardViewRelated.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self));
     }
 
 
@@ -82,10 +65,16 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        ImageView imageViewRelated,imageViewC;
-        TextView textViewDescription,textViewTitle,textViewRead,textViewTitleRelated,textViewDate;
-        Button buttonRead;
-        CardView cardView,cardViewRelated;
+        final ImageView imageViewRelated;
+        final ImageView imageViewC;
+        final TextView textViewDescription;
+        final TextView textViewTitle;
+        final TextView textViewRead;
+        final TextView textViewTitleRelated;
+        final TextView textViewDate;
+        final Button buttonRead;
+        final CardView cardView;
+        final CardView cardViewRelated;
 
         public ViewHolder(@NonNull View itemView) {
 

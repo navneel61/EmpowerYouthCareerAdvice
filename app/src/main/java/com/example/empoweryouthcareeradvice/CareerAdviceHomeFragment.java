@@ -30,15 +30,15 @@ public class CareerAdviceHomeFragment extends Fragment {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    CardView c1;
     //NavController navController;
     private RecyclerView recyclerView1,recyclerView2,recyclerView3,recyclerView4,recyclerView5,recyclerView6,recyclerView7,recyclerView8,recyclerView9,recyclerView10,recyclerView11,recyclerView12;
-    TextView textViewTitle;
-    ImageView imageView;
-    CardView cardView;
-    ArrayList<CareerAdviceCategoryModel> list=new ArrayList<>();
-    String categoryList[]={"How to write Cover Letter","Resume Tips","Job Interviews","Finding Ytour Dream Company","Finding Your Passion","Self Empowerment","Enterpreneurship","Job Search","Careeer Advancement","Networking","Personal Branding","Employers Corner"};
-    Integer img[]={R.drawable.msg,R.drawable.resumetip,R.drawable.jobinterviews,R.drawable.findcompany,R.drawable.findpassion,R.drawable.selfimprovement,R.drawable.entrepreneurship,R.drawable.jobsearch,R.drawable.careeradvancement,R.drawable.networking,R.drawable.brand,R.drawable.employee};
+    private TextView textViewTitle;
+    private ImageView imageView;
+    private CardView cardView;
+
+    private final ArrayList<CareerAdviceCategoryModel> list=new ArrayList<>();
+    private final String[] categoryList = {"How to write Cover Letter", "Resume Tips", "Job Interviews", "Finding Ytour Dream Company", "Finding Your Passion", "Self Empowerment", "Enterpreneurship", "Job Search", "Careeer Advancement", "Networking", "Personal Branding", "Employers Corner"};
+    private final Integer[] img = {R.drawable.msg, R.drawable.resumetip, R.drawable.jobinterviews, R.drawable.findcompany, R.drawable.findpassion, R.drawable.selfimprovement, R.drawable.entrepreneurship, R.drawable.jobsearch, R.drawable.careeradvancement, R.drawable.networking, R.drawable.brand, R.drawable.employee};
 
 
     @Override
@@ -112,7 +112,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[0]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorhowtowritecoverletter));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[0]);
         recyclerView1.setAdapter(adapterCareerAdviceCategoryView);
     }
 
@@ -143,7 +143,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[1]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorresumetips));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[1]);
         recyclerView2.setAdapter(adapterCareerAdviceCategoryView);
     }
 
@@ -174,7 +174,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[2]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorjobinterviews));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[2]);
         recyclerView3.setAdapter(adapterCareerAdviceCategoryView);
     }
 
@@ -205,7 +205,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[3]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorfindingyourdreamcompany));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[3]);
         recyclerView4.setAdapter(adapterCareerAdviceCategoryView);
     }
 
@@ -236,7 +236,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[4]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorfindingyourpassion));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[4]);
         recyclerView5.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews5(View view)
@@ -266,7 +266,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[5]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorselfempowerment));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[5]);
         recyclerView6.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews6(View view)
@@ -296,7 +296,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[6]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorenterpreneurship));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[6]);
         recyclerView7.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews7(View view)
@@ -326,7 +326,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[7]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorjobsearch));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[7]);
         recyclerView8.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews8(View view)
@@ -356,7 +356,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[8]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorcareeradvancement));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[8]);
         recyclerView9.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews9(View view)
@@ -386,7 +386,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[9]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colornetworking));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[9]);
         recyclerView10.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews10(View view)
@@ -416,7 +416,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[10]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorpersonalbranding));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[10]);
         recyclerView11.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initviews11(View view)
@@ -446,7 +446,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         textViewTitle.setText(categoryList[11]);
         cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.coloremployerscorner));
 
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),list,categoryList[11]);
         recyclerView12.setAdapter(adapterCareerAdviceCategoryView);
     }
 
