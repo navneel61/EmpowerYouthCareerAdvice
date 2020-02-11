@@ -1,6 +1,7 @@
 package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
 
    private ArrayList<CareerAdviceCategoryModel> list;
    private Context contexts;
+   String idtitle="";
 
 
     public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CareerAdviceCategoryModel> list) {
@@ -43,6 +45,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Bundle bundle = new Bundle();
         if (position != 3) {
             CareerAdviceCategoryModel model = list.get(position);
             holder.textTitle.setText(model.getTitle());
@@ -55,14 +58,16 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         holder.containerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-               Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
+                CareerAdviceCategoryModel model = list.get(position);
+                bundle.putString("ids",model.getTitle());
+               Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
             }
         });
         holder.viewAllView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment);
+                bundle.putString("idis", "view all");
+                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment,bundle);
             }
         });
     }
@@ -92,11 +97,9 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         @BindView(R.id.imageViewAll)
         ImageView imageViewAll;
 
-
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
         }
 
     }

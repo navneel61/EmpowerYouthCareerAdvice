@@ -100,8 +100,8 @@ public class CareerAdviceHomeFragment extends Fragment {
         imageView1=view.findViewById(R.id.cat1).findViewById(R.id.image_category_icon);
         textView1=view.findViewById(R.id.cat1).findViewById(R.id.text_view_title);
         cardView1=view.findViewById(R.id.cat1).findViewById(R.id.card_view_image);
-        imageView1.setImageResource(drawableImages[0]);
-        textView1.setText(titleList[0]);
+            imageView1.setImageResource(drawableImages[0]);
+            textView1.setText(titleList[0]);
         cardView1.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorhowtowritecoverletter));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView1.setAdapter(adapterCareerAdviceCategoryView);

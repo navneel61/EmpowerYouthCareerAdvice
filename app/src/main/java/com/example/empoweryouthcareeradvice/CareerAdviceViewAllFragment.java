@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class CareerAdviceViewAllFragment extends Fragment {
     ImageView imageView1;
     TextView textView1;
     TextView textViews1;
+    String idtitle="";
     Button button1;
     RecyclerView recyclerView;
     String[] titlesContent={"5 Easy Steps to Writing a Cover Letter","How To Write A Cover Letter","One Common Cover Letter Mistake to Avoid | My Secret Tip to Fix It","What to Write when Emailing a Resume - Perfectly Employed","7 tips for a beautiful authentic cover letter","7 SECRETS FOR WRITING THE PERFECT COVER LETTER","How to Write a Great Cover Letter in 6 Steps","How to Write a Brilliant Cover Letter | Life with Caitlyn","HOW TO QUICKLY WRITE A KILLER COVER LETTER","\n" +
@@ -32,11 +34,17 @@ public class CareerAdviceViewAllFragment extends Fragment {
     String[] mainsContent={"Writing a cover letter doesn't have to be so difficult. Here, we break down the cover letter into 5 sections to make sure you impress that recruiter.","Knowing how to write a cover letter will make the difference between landing a job interview or not. Although not all job postings require a cover letter, se","When I was working in Career Services, the thing I got the most questions about was cover letters. No one seemed to know why they needed one, if they needed one","Applying for jobs can be awkward, especially when companies ask for an application process that feels disjointed. We often see employers ask for applicants to e","If you’re not comfortable tooting your own horn, writing a cover letter can be even worse than crafting a beautiful resume- telling your future employer why t","Do recruiters and hiring managers read cover letters today? Absolutely! The reason cover letters get such a bad reputation is because most job seekers don’t t","Your cover letter is an opportunity to impress. Get it right and a hiring manager will open your beautifully crafted resume with relish and a sense of optimism."
             ,"I had no idea what a cover letter was until about a month into my first semester of college when I went to apply to be an orientation leader. Then I was scrambl","As a professional resume writer, you’d think that writing a killer cover letter would come easily to me. Yet, I regularly dreaded having to sit down and write","By the time you’re looking for your first job that requires a cover letter, you’re likely at least 18 years old. In 18 years, you have acquired applicable e"};
     Integer[] imgProfile={R.drawable.coverbasic,R.drawable.coversecond,R.drawable.images,R.drawable.resumewriting,R.drawable.coverletterthree,R.drawable.writecoverlettertwo,R.drawable.writecoverletterthree,R.drawable.brilliantcoverletter,R.drawable.killcover,R.drawable.careerexperience};
+
+    public CareerAdviceViewAllFragment() {
+
+    }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_career_advice_view_all, container, false);
         ButterKnife.bind(this, view);
         initViewCategory1(view);
+        idtitle=getArguments().getString("idis");
+        Log.d("idtitle",idtitle);
         return view;
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
