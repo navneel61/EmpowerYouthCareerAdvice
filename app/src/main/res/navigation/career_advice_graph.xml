@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment"
             app:destination="@id/careerAdviceViewAllFragment" />
+        <action
+            android:id="@+id/action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments"
+            app:destination="@id/careerAdviceSummaryFragments" />
     </fragment>
 
     <fragment
@@ -20,4 +23,10 @@
         android:name="com.example.empoweryouthcareeradvice.CareerAdviceViewAllFragment"
         android:label="fragment_career_advice_view_all"
         tools:layout="@layout/fragment_career_advice_view_all" />
+    <fragment
+        android:id="@+id/careerAdviceSummaryFragments"
+        android:name="com.example.empoweryouthcareeradvice.FragmentCareerAdviceSummary"
+        android:label="fragment_career_advice_summary"
+        tools:layout="@layout/fragment_career_advice_summary"
+        />
 </navigation>

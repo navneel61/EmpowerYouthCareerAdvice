@@ -32,14 +32,14 @@ public class CareerAdviceHomeFragment extends Fragment {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    CoverLetterModel model=new CoverLetterModel();
-    CoverLetterModel model1=new CoverLetterModel();
-    CoverLetterModel model2=new CoverLetterModel();
+    CareerAdviceCategoryModel model=new CareerAdviceCategoryModel();
+    CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
+    CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
     private RecyclerView recyclerView1,recyclerView2,recyclerView3,recyclerView4,recyclerView5,recyclerView6,recyclerView7,recyclerView8,recyclerView9,recyclerView10,recyclerView11,recyclerView12;
     private ImageView imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,imageView10,imageView11,imageView12;
     private TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8,textView9,textView10,textView11,textView12;
     private CardView cardView1,cardView2,cardView3,cardView4,cardView5,cardView6,cardView7,cardView8,cardView9,cardView10,cardView11,cardView12;
-    ArrayList<CoverLetterModel> modelList=new ArrayList<>();
+    ArrayList<CareerAdviceCategoryModel> modelList=new ArrayList<>();
 
     String[] titleList = {"How To Write Cover Letter","Resume Tips","Job Interviews","Finding Your Dream Company","Finding Your Passion","Self Empowerment","Enterpreneurship","Job Search","Career Advancement","Networking", "Personal Branding","Employers Corner"};
     Integer[] drawableImages = {R.drawable.coverrletter,R.drawable.resumetip,R.drawable.jobinterviews,R.drawable.findcompany,R.drawable.findpassions,R.drawable.selfimprovement,R.drawable.entrepreneurship,R.drawable.jobsearchs,R.drawable.careeradvancements,R.drawable.networkings,R.drawable.brand,R.drawable.employee};

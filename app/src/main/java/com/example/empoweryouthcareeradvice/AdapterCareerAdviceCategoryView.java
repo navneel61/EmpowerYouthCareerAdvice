@@ -25,11 +25,11 @@ import butterknife.ButterKnife;
 
 public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<AdapterCareerAdviceCategoryView.ViewHolder> {
 
-   private ArrayList<CoverLetterModel> list;
+   private ArrayList<CareerAdviceCategoryModel> list;
    private Context contexts;
 
 
-    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CoverLetterModel> list) {
+    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CareerAdviceCategoryModel> list) {
         this.contexts = contexts;
         this.list = list;
     }
@@ -44,7 +44,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (position != 3) {
-            CoverLetterModel model = list.get(position);
+            CareerAdviceCategoryModel model = list.get(position);
             holder.textTitle.setText(model.getTitle());
             holder.imageView.setImageResource(model.getImage());
         }
@@ -52,6 +52,13 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
+        holder.containerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+               Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
+            }
+        });
         holder.viewAllView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

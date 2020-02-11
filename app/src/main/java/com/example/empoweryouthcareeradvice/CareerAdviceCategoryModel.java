@@ -1,12 +1,11 @@
 package com.example.empoweryouthcareeradvice;
 
-
-import android.util.Log;
-
-public class CoverLetterModel {
+public class CareerAdviceCategoryModel {
     private int image;
     private String description;
     private String title;
+
+
     public int getImage() {
         return image;
     }
@@ -30,6 +29,4 @@ public class CoverLetterModel {
     public void setTitle(String title) {
         this.title = title;
     }
-
-
 }

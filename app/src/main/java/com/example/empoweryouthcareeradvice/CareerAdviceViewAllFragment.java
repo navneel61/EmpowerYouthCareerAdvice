@@ -50,17 +50,17 @@ public class CareerAdviceViewAllFragment extends Fragment {
        // textViews1=view.findViewById(R.id.cat1).findViewById(R.id.textView_content);
       //  button1=view.findViewById(R.id.cat1).findViewById(R.id.button_read);
         recyclerView=view.findViewById(R.id.recyclerView);
-        ArrayList<CoverLetterModel> models=new ArrayList<>();
+        ArrayList<CareerAdviceCategoryModel> models=new ArrayList<>();
         for(int i=0;i<titlesContent.length;i++)
         {
-            CoverLetterModel model=new CoverLetterModel();
+            CareerAdviceCategoryModel model=new CareerAdviceCategoryModel();
             model.setImage(imgProfile[i]);
             model.setTitle(titlesContent[i]);
             model.setDescription(mainsContent[i]);
             models.add(model);
         }
-        CoverLetterAdapter coverLetterAdapter=new CoverLetterAdapter(getActivity(),models,0);
-        recyclerView.setAdapter(coverLetterAdapter);
+        AdapterCareerAdviceCategoryRelated adapterCareerAdviceCategoryRelated =new AdapterCareerAdviceCategoryRelated(getActivity(),models,0);
+        recyclerView.setAdapter(adapterCareerAdviceCategoryRelated);
 
       //  imageView1.setImageResource(imgProfile[0]);
       //  textView1.setText(titlesContent[0]);

@@ -1,7 +1,6 @@
 package com.example.empoweryouthcareeradvice;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,13 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.CoverLetters> {
+public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<AdapterCareerAdviceCategoryRelated.CoverLetters> {
 
-    ArrayList<CoverLetterModel> coverLetterModels;
+    ArrayList<CareerAdviceCategoryModel> coverLetterModels;
     Context context;
     int type;
 
-    public CoverLetterAdapter(Context context,ArrayList<CoverLetterModel> coverLetterModels,int type)
+    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> coverLetterModels, int type)
     {
         this.context=context;
         this.coverLetterModels=coverLetterModels;
@@ -41,7 +39,7 @@ public class CoverLetterAdapter extends RecyclerView.Adapter<CoverLetterAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull CoverLetters holder, int position) {
-        CoverLetterModel model=coverLetterModels.get(position);
+        CareerAdviceCategoryModel model=coverLetterModels.get(position);
        holder.imageViewC.setImageResource(model.getImage());
         holder.textViewC.setText(model.getTitle());
         Log.d("titleis",model.getTitle());
