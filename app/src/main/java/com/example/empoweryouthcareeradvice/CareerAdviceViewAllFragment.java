@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
-class CareerAdviceViewAllFragment extends Fragment {
+public class CareerAdviceViewAllFragment extends Fragment {
     private RecyclerView recyclerView;
     private final String[] titlesContent={"5 Easy Steps to Writing a Cover Letter","How To Write A Cover Letter","One Common Cover Letter Mistake to Avoid | My Secret Tip to Fix It","What to Write when Emailing a Resume - Perfectly Employed","7 tips for a beautiful authentic cover letter","7 SECRETS FOR WRITING THE PERFECT COVER LETTER","How to Write a Great Cover Letter in 6 Steps","How to Write a Brilliant Cover Letter | Life with Caitlyn","HOW TO QUICKLY WRITE A KILLER COVER LETTER","\n" +
             "How to Write a Cover Letter (With \"No\" Experience)"};

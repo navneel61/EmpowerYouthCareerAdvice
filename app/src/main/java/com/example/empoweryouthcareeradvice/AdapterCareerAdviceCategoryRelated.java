@@ -56,7 +56,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             holder.imageViewRelated.setImageResource(model.getImage());
             holder.textViewTitleRelated.setText(model.getTitle());
         }
-        holder.cardView.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments));
+        holder.cardViewRelated.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self));
     }
 
     @Override
