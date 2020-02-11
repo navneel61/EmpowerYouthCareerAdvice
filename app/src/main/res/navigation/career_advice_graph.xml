@@ -28,5 +28,9 @@
         android:name="com.example.empoweryouthcareeradvice.FragmentCareerAdviceSummary"
         android:label="fragment_career_advice_summary"
         tools:layout="@layout/fragment_career_advice_summary"
-        />
+        >
+        <action
+            android:id="@+id/action_careerAdviceSummaryFragments_self"
+            app:destination="@id/careerAdviceSummaryFragments" />
+    </fragment>
 </navigation>

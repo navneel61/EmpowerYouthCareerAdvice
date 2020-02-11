@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
     @Override
     public CoverLetters onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_coverletter,parent,false);
+        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_related,parent,false);
         return new CoverLetters(vie);
     }
 
@@ -47,12 +49,6 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         {
             holder.textView.setText(model.getDescription());
             Log.d("type0size", String.valueOf(coverLetterModels.size()));
-            holder.buttonRead.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                  //  context.startActivity(new Intent(context,SummaryActivity.class));
-                }
-            });
             holder.textViewRead.setVisibility(View.GONE);
         }
         else if(type==1)
@@ -61,6 +57,12 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             holder.buttonRead.setVisibility(View.GONE);
             Log.d("type1size", String.valueOf(coverLetterModels.size()));
         }
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self);
+            }
+        });
     }
 
     @Override
@@ -73,6 +75,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         ImageView imageView,imageViewC;
         TextView textView,textViewC,textViewRead;
         Button buttonRead;
+        CardView cardView;
         ImageView imgRelatedAticles;
         TextView textViewRelatedArticleTitle;
         public CoverLetters(@NonNull View itemView) {
@@ -82,6 +85,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             textView=itemView.findViewById(R.id.text_description);
             textViewC=itemView.findViewById(R.id.text_title);
             buttonRead=itemView.findViewById(R.id.button_read);
+            cardView=itemView.findViewById(R.id.cardview_read);
           //  imgRelatedAticles=itemView.findViewById(R.id.image_view_related);
           //  textViewRelatedArticleTitle=itemView.findViewById(R.id.text_title_related);
             textViewRead=itemView.findViewById(R.id.text_view_read);
