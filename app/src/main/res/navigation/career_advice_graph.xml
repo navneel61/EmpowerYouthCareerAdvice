@@ -38,6 +38,6 @@
             app:destination="@id/careerAdviceSummaryFragments" />
         <argument
             android:name="ids"
-            android:defaultValue="null" />
+            app:argType="integer" />
     </fragment>
 </navigation>

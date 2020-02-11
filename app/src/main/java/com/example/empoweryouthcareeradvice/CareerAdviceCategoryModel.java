@@ -1,6 +1,6 @@
 package com.example.empoweryouthcareeradvice;
 
-public class CareerAdviceCategoryModel {
+class CareerAdviceCategoryModel {
     private int image;
     private String description;
     private String title;

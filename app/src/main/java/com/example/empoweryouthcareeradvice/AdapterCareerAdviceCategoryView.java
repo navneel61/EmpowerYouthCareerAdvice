@@ -13,27 +13,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<AdapterCareerAdviceCategoryView.ViewHolder> {
 
-   private ArrayList<CareerAdviceCategoryModel> list;
-   private Context contexts;
-   String idtitle="";
-
-
-    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CareerAdviceCategoryModel> list) {
-        this.contexts = contexts;
+   private final ArrayList<CareerAdviceCategoryModel> list;
+    private final String title;
+    public AdapterCareerAdviceCategoryView(Context contexts, ArrayList<CareerAdviceCategoryModel> list,String title) {
         this.list = list;
+        this.title=title;
     }
 
     @NonNull
@@ -55,20 +50,14 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
-        holder.containerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CareerAdviceCategoryModel model = list.get(position);
-                bundle.putString("ids",model.getTitle());
-               Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
-            }
+        holder.containerView.setOnClickListener(view -> {
+            bundle.putInt("id",position);
+            Log.d("position", String.valueOf(position));
+           Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
         });
-        holder.viewAllView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString("idis", "view all");
-                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment,bundle);
-            }
+        holder.viewAllView.setOnClickListener(v -> {
+            bundle.putString("idis", title);
+            Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment,bundle);
         });
     }
 
@@ -82,20 +71,10 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         ImageView imageView;
         @BindView(R.id.text_title)
         TextView textTitle;
-        @BindView(R.id.button_read)
-        TextView buttonRead;
         @BindView(R.id.container_view)
         ConstraintLayout containerView;
-        @BindView(R.id.cardViewAll)
-        CardView cardViewAll;
         @BindView(R.id.viewAllView)
         RelativeLayout viewAllView;
-        @BindView(R.id.text_description)
-        TextView textViewDescription;
-        @BindView(R.id.text_view_all)
-        TextView textViewAll;
-        @BindView(R.id.imageViewAll)
-        ImageView imageViewAll;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);

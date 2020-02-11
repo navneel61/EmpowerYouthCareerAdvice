@@ -2,7 +2,6 @@ package com.example.empoweryouthcareeradvice;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,21 +26,18 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CareerAdviceHomeFragment extends Fragment {
+class CareerAdviceHomeFragment extends Fragment {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    CareerAdviceCategoryModel model=new CareerAdviceCategoryModel();
-    CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
-    CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
+    private final CareerAdviceCategoryModel model=new CareerAdviceCategoryModel();
+    private final CareerAdviceCategoryModel model1=new CareerAdviceCategoryModel();
+    private final CareerAdviceCategoryModel model2=new CareerAdviceCategoryModel();
     private RecyclerView recyclerView1,recyclerView2,recyclerView3,recyclerView4,recyclerView5,recyclerView6,recyclerView7,recyclerView8,recyclerView9,recyclerView10,recyclerView11,recyclerView12;
-    private ImageView imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,imageView10,imageView11,imageView12;
-    private TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8,textView9,textView10,textView11,textView12;
-    private CardView cardView1,cardView2,cardView3,cardView4,cardView5,cardView6,cardView7,cardView8,cardView9,cardView10,cardView11,cardView12;
-    ArrayList<CareerAdviceCategoryModel> modelList=new ArrayList<>();
+    private final ArrayList<CareerAdviceCategoryModel> modelList=new ArrayList<>();
 
-    String[] titleList = {"How To Write Cover Letter","Resume Tips","Job Interviews","Finding Your Dream Company","Finding Your Passion","Self Empowerment","Enterpreneurship","Job Search","Career Advancement","Networking", "Personal Branding","Employers Corner"};
-    Integer[] drawableImages = {R.drawable.coverrletter,R.drawable.resumetip,R.drawable.jobinterviews,R.drawable.findcompany,R.drawable.findpassions,R.drawable.selfimprovement,R.drawable.entrepreneurship,R.drawable.jobsearchs,R.drawable.careeradvancements,R.drawable.networkings,R.drawable.brand,R.drawable.employee};
+    private final String[] titleList = {"How To Write Cover Letter","Resume Tips","Job Interviews","Finding Your Dream Company","Finding Your Passion","Self Empowerment","Enterpreneurship","Job Search","Career Advancement","Networking", "Personal Branding","Employers Corner"};
+    private final Integer[] drawableImages = {R.drawable.coverrletter,R.drawable.resumetip,R.drawable.jobinterviews,R.drawable.findcompany,R.drawable.findpassions,R.drawable.selfimprovement,R.drawable.entrepreneurship,R.drawable.jobsearchs,R.drawable.careeradvancements,R.drawable.networkings,R.drawable.brand,R.drawable.employee};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,20 +85,20 @@ public class CareerAdviceHomeFragment extends Fragment {
         model.setImage(R.drawable.coverbasic);
         model.setTitle("How To Write Cover Letter");
         modelList.add(model);
-        model1.setImage(R.drawable.coverbasic);
+        model1.setImage(R.drawable.coverletter);
         model1.setTitle("How To Write Cover Letter");
         modelList.add(model1);
         model2.setImage(R.drawable.coverbasic);
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView1 = view.findViewById(R.id.cat1).findViewById(R.id.recyclerView);
-        imageView1=view.findViewById(R.id.cat1).findViewById(R.id.image_category_icon);
-        textView1=view.findViewById(R.id.cat1).findViewById(R.id.text_view_title);
-        cardView1=view.findViewById(R.id.cat1).findViewById(R.id.card_view_image);
+        ImageView imageView1 = view.findViewById(R.id.cat1).findViewById(R.id.image_category_icon);
+        TextView textView1 = view.findViewById(R.id.cat1).findViewById(R.id.text_view_title);
+        CardView cardView1 = view.findViewById(R.id.cat1).findViewById(R.id.card_view_image);
             imageView1.setImageResource(drawableImages[0]);
             textView1.setText(titleList[0]);
         cardView1.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorhowtowritecoverletter));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[0]);
         recyclerView1.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory2 (View view){
@@ -117,13 +112,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView2 = view.findViewById(R.id.cat2).findViewById(R.id.recyclerView);
-        imageView2=view.findViewById(R.id.cat2).findViewById(R.id.image_category_icon);
-        textView2=view.findViewById(R.id.cat2).findViewById(R.id.text_view_title);
-        cardView2=view.findViewById(R.id.cat2).findViewById(R.id.card_view_image);
+        ImageView imageView2 = view.findViewById(R.id.cat2).findViewById(R.id.image_category_icon);
+        TextView textView2 = view.findViewById(R.id.cat2).findViewById(R.id.text_view_title);
+        CardView cardView2 = view.findViewById(R.id.cat2).findViewById(R.id.card_view_image);
         imageView2.setImageResource(drawableImages[1]);
         textView2.setText(titleList[1]);
         cardView2.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorresumetips));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[1]);
         recyclerView2.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory3 (View view){
@@ -137,13 +132,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView3 = view.findViewById(R.id.cat3).findViewById(R.id.recyclerView);
-        imageView3=view.findViewById(R.id.cat3).findViewById(R.id.image_category_icon);
-        textView3=view.findViewById(R.id.cat3).findViewById(R.id.text_view_title);
-        cardView3=view.findViewById(R.id.cat3).findViewById(R.id.card_view_image);
+        ImageView imageView3 = view.findViewById(R.id.cat3).findViewById(R.id.image_category_icon);
+        TextView textView3 = view.findViewById(R.id.cat3).findViewById(R.id.text_view_title);
+        CardView cardView3 = view.findViewById(R.id.cat3).findViewById(R.id.card_view_image);
         imageView3.setImageResource(drawableImages[2]);
         textView3.setText(titleList[2]);
         cardView3.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorjobinterviews));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[2]);
         recyclerView3.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory4 (View view){
@@ -157,13 +152,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView4 = view.findViewById(R.id.cat4).findViewById(R.id.recyclerView);
-        imageView4=view.findViewById(R.id.cat4).findViewById(R.id.image_category_icon);
-        textView4=view.findViewById(R.id.cat4).findViewById(R.id.text_view_title);
-        cardView4=view.findViewById(R.id.cat4).findViewById(R.id.card_view_image);
+        ImageView imageView4 = view.findViewById(R.id.cat4).findViewById(R.id.image_category_icon);
+        TextView textView4 = view.findViewById(R.id.cat4).findViewById(R.id.text_view_title);
+        CardView cardView4 = view.findViewById(R.id.cat4).findViewById(R.id.card_view_image);
         imageView4.setImageResource(drawableImages[3]);
         textView4.setText(titleList[3]);
         cardView4.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorfindingyourdreamcompany));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[3]);
         recyclerView4.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory5 (View view){
@@ -177,13 +172,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView5 = view.findViewById(R.id.cat5).findViewById(R.id.recyclerView);
-        imageView5=view.findViewById(R.id.cat5).findViewById(R.id.image_category_icon);
-        textView5=view.findViewById(R.id.cat5).findViewById(R.id.text_view_title);
-        cardView5=view.findViewById(R.id.cat5).findViewById(R.id.card_view_image);
+        ImageView imageView5 = view.findViewById(R.id.cat5).findViewById(R.id.image_category_icon);
+        TextView textView5 = view.findViewById(R.id.cat5).findViewById(R.id.text_view_title);
+        CardView cardView5 = view.findViewById(R.id.cat5).findViewById(R.id.card_view_image);
         imageView5.setImageResource(drawableImages[4]);
         textView5.setText(titleList[4]);
         cardView5.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorfindingyourpassion));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[4]);
         recyclerView5.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory6 (View view){
@@ -197,13 +192,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView6 = view.findViewById(R.id.cat6).findViewById(R.id.recyclerView);
-        imageView6=view.findViewById(R.id.cat6).findViewById(R.id.image_category_icon);
-        textView6=view.findViewById(R.id.cat6).findViewById(R.id.text_view_title);
-        cardView6=view.findViewById(R.id.cat6).findViewById(R.id.card_view_image);
+        ImageView imageView6 = view.findViewById(R.id.cat6).findViewById(R.id.image_category_icon);
+        TextView textView6 = view.findViewById(R.id.cat6).findViewById(R.id.text_view_title);
+        CardView cardView6 = view.findViewById(R.id.cat6).findViewById(R.id.card_view_image);
         imageView6.setImageResource(drawableImages[5]);
         textView6.setText(titleList[5]);
         cardView6.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorselfempowerment));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[5]);
         recyclerView6.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory7 (View view){
@@ -217,13 +212,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView7 = view.findViewById(R.id.cat7).findViewById(R.id.recyclerView);
-        imageView7=view.findViewById(R.id.cat7).findViewById(R.id.image_category_icon);
-        textView7=view.findViewById(R.id.cat7).findViewById(R.id.text_view_title);
-        cardView7=view.findViewById(R.id.cat7).findViewById(R.id.card_view_image);
+        ImageView imageView7 = view.findViewById(R.id.cat7).findViewById(R.id.image_category_icon);
+        TextView textView7 = view.findViewById(R.id.cat7).findViewById(R.id.text_view_title);
+        CardView cardView7 = view.findViewById(R.id.cat7).findViewById(R.id.card_view_image);
         imageView7.setImageResource(drawableImages[6]);
         textView7.setText(titleList[6]);
         cardView7.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorenterpreneurship));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[6]);
         recyclerView7.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory8 (View view){
@@ -237,13 +232,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView8 = view.findViewById(R.id.cat8).findViewById(R.id.recyclerView);
-        imageView8=view.findViewById(R.id.cat8).findViewById(R.id.image_category_icon);
-        textView8=view.findViewById(R.id.cat8).findViewById(R.id.text_view_title);
-        cardView8=view.findViewById(R.id.cat8).findViewById(R.id.card_view_image);
+        ImageView imageView8 = view.findViewById(R.id.cat8).findViewById(R.id.image_category_icon);
+        TextView textView8 = view.findViewById(R.id.cat8).findViewById(R.id.text_view_title);
+        CardView cardView8 = view.findViewById(R.id.cat8).findViewById(R.id.card_view_image);
         imageView8.setImageResource(drawableImages[7]);
         textView8.setText(titleList[7]);
         cardView8.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorjobsearch));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[7]);
         recyclerView8.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory9 (View view){
@@ -257,13 +252,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView9 = view.findViewById(R.id.cat9).findViewById(R.id.recyclerView);
-        imageView9=view.findViewById(R.id.cat9).findViewById(R.id.image_category_icon);
-        textView9=view.findViewById(R.id.cat9).findViewById(R.id.text_view_title);
-        cardView9=view.findViewById(R.id.cat9).findViewById(R.id.card_view_image);
+        ImageView imageView9 = view.findViewById(R.id.cat9).findViewById(R.id.image_category_icon);
+        TextView textView9 = view.findViewById(R.id.cat9).findViewById(R.id.text_view_title);
+        CardView cardView9 = view.findViewById(R.id.cat9).findViewById(R.id.card_view_image);
         imageView9.setImageResource(drawableImages[8]);
         textView9.setText(titleList[8]);
         cardView9.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorcareeradvancement));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[8]);
         recyclerView9.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory10 (View view){
@@ -277,13 +272,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView10 = view.findViewById(R.id.cat10).findViewById(R.id.recyclerView);
-        imageView10=view.findViewById(R.id.cat10).findViewById(R.id.image_category_icon);
-        textView10=view.findViewById(R.id.cat10).findViewById(R.id.text_view_title);
-        cardView10=view.findViewById(R.id.cat10).findViewById(R.id.card_view_image);
+        ImageView imageView10 = view.findViewById(R.id.cat10).findViewById(R.id.image_category_icon);
+        TextView textView10 = view.findViewById(R.id.cat10).findViewById(R.id.text_view_title);
+        CardView cardView10 = view.findViewById(R.id.cat10).findViewById(R.id.card_view_image);
         imageView10.setImageResource(drawableImages[9]);
         textView10.setText(titleList[9]);
         cardView10.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colornetworking));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[9]);
         recyclerView10.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory11 (View view){
@@ -297,13 +292,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView11 = view.findViewById(R.id.cat11).findViewById(R.id.recyclerView);
-        imageView11=view.findViewById(R.id.cat11).findViewById(R.id.image_category_icon);
-        textView11=view.findViewById(R.id.cat11).findViewById(R.id.text_view_title);
-        cardView11=view.findViewById(R.id.cat11).findViewById(R.id.card_view_image);
+        ImageView imageView11 = view.findViewById(R.id.cat11).findViewById(R.id.image_category_icon);
+        TextView textView11 = view.findViewById(R.id.cat11).findViewById(R.id.text_view_title);
+        CardView cardView11 = view.findViewById(R.id.cat11).findViewById(R.id.card_view_image);
         imageView11.setImageResource(drawableImages[10]);
         textView11.setText(titleList[10]);
         cardView11.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorpersonalbranding));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[10]);
         recyclerView11.setAdapter(adapterCareerAdviceCategoryView);
     }
     private void initCategory12 (View view){
@@ -317,13 +312,13 @@ public class CareerAdviceHomeFragment extends Fragment {
         model2.setTitle("How To Write Cover Letter");
         modelList.add(model2);
         recyclerView12 = view.findViewById(R.id.cat12).findViewById(R.id.recyclerView);
-        imageView12=view.findViewById(R.id.cat12).findViewById(R.id.image_category_icon);
-        textView12=view.findViewById(R.id.cat12).findViewById(R.id.text_view_title);
-        cardView12=view.findViewById(R.id.cat12).findViewById(R.id.card_view_image);
+        ImageView imageView12 = view.findViewById(R.id.cat12).findViewById(R.id.image_category_icon);
+        TextView textView12 = view.findViewById(R.id.cat12).findViewById(R.id.text_view_title);
+        CardView cardView12 = view.findViewById(R.id.cat12).findViewById(R.id.card_view_image);
         imageView12.setImageResource(drawableImages[11]);
         textView12.setText(titleList[11]);
         cardView12.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.coloremployerscorner));
-        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
+        AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList,titleList[11]);
         recyclerView12.setAdapter(adapterCareerAdviceCategoryView);
     }
 }
