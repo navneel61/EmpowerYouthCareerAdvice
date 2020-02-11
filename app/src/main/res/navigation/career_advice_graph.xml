@@ -22,7 +22,11 @@
         android:id="@+id/careerAdviceViewAllFragment"
         android:name="com.example.empoweryouthcareeradvice.CareerAdviceViewAllFragment"
         android:label="fragment_career_advice_view_all"
-        tools:layout="@layout/fragment_career_advice_view_all" />
+        tools:layout="@layout/fragment_career_advice_view_all" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/careerAdviceSummaryFragments"
         android:name="com.example.empoweryouthcareeradvice.FragmentCareerAdviceSummary"

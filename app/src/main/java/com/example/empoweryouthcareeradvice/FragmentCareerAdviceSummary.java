@@ -94,7 +94,7 @@ public class FragmentCareerAdviceSummary extends Fragment {
         image.setBackgroundResource(img[0]);
         textTitle.setText(titleContent[0]);
         txtDescription.setText(mainContent[0]);
-        AdapterCareerAdviceCategoryRelated adapterCareerAdviceCategoryRelated=new AdapterCareerAdviceCategoryRelated(getActivity(),list);
+        AdapterCareerAdviceCategoryRelated adapterCareerAdviceCategoryRelated=new AdapterCareerAdviceCategoryRelated(getActivity(),list,1);
         recyclerView.setAdapter(adapterCareerAdviceCategoryRelated);
 
 

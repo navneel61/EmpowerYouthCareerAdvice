@@ -21,30 +21,50 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
 
     ArrayList<CareerAdviceCategoryModel> coverLetterModels;
     Context context;
+    int type;
 
-    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> coverLetterModels)
+    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> coverLetterModels, int type)
     {
         this.context=context;
         this.coverLetterModels=coverLetterModels;
+        Log.d("conssize", String.valueOf(this.coverLetterModels.size()));
+        this.type=type;
     }
 
     @NonNull
     @Override
     public CoverLetters onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_related,parent,false);
+        if(type==1)
+        {
 
-        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_summary_related,parent,false);
+        }
         return new CoverLetters(vie);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CoverLetters holder, int position) {
         CareerAdviceCategoryModel model=coverLetterModels.get(position);
-       holder.imageViewC.setImageResource(model.getImage());
-        holder.textViewC.setText(model.getTitle());
+        if(type==0)
+        {
+            holder.imageViewC.setImageResource(model.getImage());
+            holder.textViewTitle.setText(model.getTitle());
+            Log.d("titleis",model.getTitle());
+            holder.textViewDescription.setText(model.getDescription());
+            Log.d("type0size", String.valueOf(coverLetterModels.size()));
+            holder.textViewRead.setVisibility(View.GONE);
+        }
+        else if(type==1)
+        {
+            holder.cardView.setVisibility(View.GONE);
+            holder.cardViewRelated.setVisibility(View.VISIBLE);
+            holder.imageViewRelated.setImageResource(model.getImage());
+            holder.textViewTitleRelated.setText(model.getTitle());
+        }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self);
+                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
             }
         });
     }
@@ -56,20 +76,25 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
 
     public class CoverLetters extends RecyclerView.ViewHolder
     {
-        ImageView imageView,imageViewC;
-        TextView textView,textViewC,textViewRead;
+        ImageView imageViewRelated,imageViewC;
+        TextView textViewDescription,textViewTitle,textViewRead,textViewTitleRelated,textViewDate;
         Button buttonRead;
-        CardView cardView;
+        CardView cardView,cardViewRelated;
         ImageView imgRelatedAticles;
         TextView textViewRelatedArticleTitle;
         public CoverLetters(@NonNull View itemView) {
 
             super(itemView);
             imageViewC=itemView.findViewById(R.id.image_view);
-            textView=itemView.findViewById(R.id.datemonthyear);
-            textViewC=itemView.findViewById(R.id.text_title);
+            textViewDescription=itemView.findViewById(R.id.text_description);
+            textViewTitle=itemView.findViewById(R.id.text_title);
+            buttonRead=itemView.findViewById(R.id.button_read);
             cardView=itemView.findViewById(R.id.cardview_read);
-            textViewRead=itemView.findViewById(R.id.text_view_read);
+            cardViewRelated=itemView.findViewById(R.id.cardview_related);
+            imageViewRelated=itemView.findViewById(R.id.image_view_related);
+            textViewTitleRelated=itemView.findViewById(R.id.title_related);
+            textViewDate=itemView.findViewById(R.id.datemonthyear);
+            textViewRead=itemView.findViewById(R.id.read_articles);
         }
     }
 }

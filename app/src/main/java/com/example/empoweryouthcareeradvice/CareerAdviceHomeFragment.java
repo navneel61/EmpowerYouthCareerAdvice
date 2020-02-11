@@ -102,7 +102,7 @@ public class CareerAdviceHomeFragment extends Fragment {
         cardView1=view.findViewById(R.id.cat1).findViewById(R.id.card_view_image);
         imageView1.setImageResource(drawableImages[0]);
         textView1.setText(titleList[0]);
-        cardView1.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorSkyBlue));
+        cardView1.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorhowtowritecoverletter));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView1.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -119,9 +119,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView2 = view.findViewById(R.id.cat2).findViewById(R.id.recyclerView);
         imageView2=view.findViewById(R.id.cat2).findViewById(R.id.image_category_icon);
         textView2=view.findViewById(R.id.cat2).findViewById(R.id.text_view_title);
-        cardView2=view.findViewById(R.id.cat1).findViewById(R.id.card_view_image);
+        cardView2=view.findViewById(R.id.cat2).findViewById(R.id.card_view_image);
         imageView2.setImageResource(drawableImages[1]);
         textView2.setText(titleList[1]);
+        cardView2.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorresumetips));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView2.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -138,9 +139,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView3 = view.findViewById(R.id.cat3).findViewById(R.id.recyclerView);
         imageView3=view.findViewById(R.id.cat3).findViewById(R.id.image_category_icon);
         textView3=view.findViewById(R.id.cat3).findViewById(R.id.text_view_title);
-        cardView3=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView3=view.findViewById(R.id.cat3).findViewById(R.id.card_view_image);
         imageView3.setImageResource(drawableImages[2]);
         textView3.setText(titleList[2]);
+        cardView3.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorjobinterviews));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView3.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -157,9 +159,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView4 = view.findViewById(R.id.cat4).findViewById(R.id.recyclerView);
         imageView4=view.findViewById(R.id.cat4).findViewById(R.id.image_category_icon);
         textView4=view.findViewById(R.id.cat4).findViewById(R.id.text_view_title);
-        cardView4=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView4=view.findViewById(R.id.cat4).findViewById(R.id.card_view_image);
         imageView4.setImageResource(drawableImages[3]);
         textView4.setText(titleList[3]);
+        cardView4.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorfindingyourdreamcompany));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView4.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -176,9 +179,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView5 = view.findViewById(R.id.cat5).findViewById(R.id.recyclerView);
         imageView5=view.findViewById(R.id.cat5).findViewById(R.id.image_category_icon);
         textView5=view.findViewById(R.id.cat5).findViewById(R.id.text_view_title);
-        cardView5=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView5=view.findViewById(R.id.cat5).findViewById(R.id.card_view_image);
         imageView5.setImageResource(drawableImages[4]);
         textView5.setText(titleList[4]);
+        cardView5.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorfindingyourpassion));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView5.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -195,9 +199,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView6 = view.findViewById(R.id.cat6).findViewById(R.id.recyclerView);
         imageView6=view.findViewById(R.id.cat6).findViewById(R.id.image_category_icon);
         textView6=view.findViewById(R.id.cat6).findViewById(R.id.text_view_title);
-        cardView6=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView6=view.findViewById(R.id.cat6).findViewById(R.id.card_view_image);
         imageView6.setImageResource(drawableImages[5]);
         textView6.setText(titleList[5]);
+        cardView6.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorselfempowerment));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView6.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -214,9 +219,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView7 = view.findViewById(R.id.cat7).findViewById(R.id.recyclerView);
         imageView7=view.findViewById(R.id.cat7).findViewById(R.id.image_category_icon);
         textView7=view.findViewById(R.id.cat7).findViewById(R.id.text_view_title);
-        cardView7=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView7=view.findViewById(R.id.cat7).findViewById(R.id.card_view_image);
         imageView7.setImageResource(drawableImages[6]);
         textView7.setText(titleList[6]);
+        cardView7.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorenterpreneurship));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView7.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -233,9 +239,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView8 = view.findViewById(R.id.cat8).findViewById(R.id.recyclerView);
         imageView8=view.findViewById(R.id.cat8).findViewById(R.id.image_category_icon);
         textView8=view.findViewById(R.id.cat8).findViewById(R.id.text_view_title);
-        cardView8=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView8=view.findViewById(R.id.cat8).findViewById(R.id.card_view_image);
         imageView8.setImageResource(drawableImages[7]);
         textView8.setText(titleList[7]);
+        cardView8.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorjobsearch));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView8.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -252,9 +259,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView9 = view.findViewById(R.id.cat9).findViewById(R.id.recyclerView);
         imageView9=view.findViewById(R.id.cat9).findViewById(R.id.image_category_icon);
         textView9=view.findViewById(R.id.cat9).findViewById(R.id.text_view_title);
-        cardView9=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView9=view.findViewById(R.id.cat9).findViewById(R.id.card_view_image);
         imageView9.setImageResource(drawableImages[8]);
         textView9.setText(titleList[8]);
+        cardView9.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorcareeradvancement));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView9.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -271,9 +279,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView10 = view.findViewById(R.id.cat10).findViewById(R.id.recyclerView);
         imageView10=view.findViewById(R.id.cat10).findViewById(R.id.image_category_icon);
         textView10=view.findViewById(R.id.cat10).findViewById(R.id.text_view_title);
-        cardView10=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView10=view.findViewById(R.id.cat10).findViewById(R.id.card_view_image);
         imageView10.setImageResource(drawableImages[9]);
         textView10.setText(titleList[9]);
+        cardView10.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colornetworking));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView10.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -290,9 +299,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView11 = view.findViewById(R.id.cat11).findViewById(R.id.recyclerView);
         imageView11=view.findViewById(R.id.cat11).findViewById(R.id.image_category_icon);
         textView11=view.findViewById(R.id.cat11).findViewById(R.id.text_view_title);
-        cardView11=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView11=view.findViewById(R.id.cat11).findViewById(R.id.card_view_image);
         imageView11.setImageResource(drawableImages[10]);
         textView11.setText(titleList[10]);
+        cardView11.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.colorpersonalbranding));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView11.setAdapter(adapterCareerAdviceCategoryView);
     }
@@ -309,9 +319,10 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView12 = view.findViewById(R.id.cat12).findViewById(R.id.recyclerView);
         imageView12=view.findViewById(R.id.cat12).findViewById(R.id.image_category_icon);
         textView12=view.findViewById(R.id.cat12).findViewById(R.id.text_view_title);
-        cardView12=view.findViewById(R.id.cat1).findViewById(R.id.cardview);
+        cardView12=view.findViewById(R.id.cat12).findViewById(R.id.card_view_image);
         imageView12.setImageResource(drawableImages[11]);
         textView12.setText(titleList[11]);
+        cardView12.setCardBackgroundColor(ContextCompat.getColor(getActivity(),R.color.coloremployerscorner));
         AdapterCareerAdviceCategoryView adapterCareerAdviceCategoryView=new AdapterCareerAdviceCategoryView(getActivity(),modelList);
         recyclerView12.setAdapter(adapterCareerAdviceCategoryView);
     }
