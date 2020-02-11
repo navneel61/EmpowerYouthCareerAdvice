@@ -6,7 +6,7 @@
     tools:context=".CareerAdviceSummaryFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <include layout="@layout/activity_resume_tips_hire"
+    <include layout="@layout/item_career_advice_summary"
         android:id="@+id/summaryFragment"/>
 
 </FrameLayout>

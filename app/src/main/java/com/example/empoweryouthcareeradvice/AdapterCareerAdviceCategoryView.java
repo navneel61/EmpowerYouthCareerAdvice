@@ -67,19 +67,18 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
             holder.containerView.setVisibility(View.INVISIBLE);
             holder.viewAllView.setVisibility(View.VISIBLE);
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
         holder.containerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments);
+            }
+        });
+
+        holder.viewAllView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment);
             }
         });
 
@@ -110,16 +109,7 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    onItemClick.onItemClicked(getAdapterPosition());
-//                }
-//            });
-        }
+         }
     }
-   /* public interface OnItemClick
-    {
-        void onItemClicked(int position);
-    }*/
+
 }
