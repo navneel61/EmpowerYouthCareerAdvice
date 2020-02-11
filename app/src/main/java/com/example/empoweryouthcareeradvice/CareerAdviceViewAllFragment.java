@@ -53,10 +53,6 @@ public class CareerAdviceViewAllFragment extends Fragment {
     }
     private void  initViewCategory1(View view)
     {
-       // imageView1=view.findViewById(R.id.cat1).findViewById(R.id.imageView_content);
-      //  textView1=view.findViewById(R.id.cat1).findViewById(R.id.textView_title);
-       // textViews1=view.findViewById(R.id.cat1).findViewById(R.id.textView_content);
-      //  button1=view.findViewById(R.id.cat1).findViewById(R.id.button_read);
         recyclerView=view.findViewById(R.id.recyclerView);
         ArrayList<CareerAdviceCategoryModel> models=new ArrayList<>();
         for(int i=0;i<titlesContent.length;i++)

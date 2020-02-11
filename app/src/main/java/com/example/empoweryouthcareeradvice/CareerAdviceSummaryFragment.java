@@ -25,7 +25,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class FragmentCareerAdviceSummary extends Fragment {
+public class CareerAdviceSummaryFragment extends Fragment {
     NavController navController;
     ImageView image;
     TextView textTitle,textSummary,textComments,textRelatedArticles,txtDescription;
@@ -45,7 +45,7 @@ public class FragmentCareerAdviceSummary extends Fragment {
     int img[]={R.drawable.r1,R.drawable.r2,R.drawable.r3,R.drawable.r4,R.drawable.r5,R.drawable.r6,R.drawable.r7,R.drawable.r8,R.drawable.r9,R.drawable.r10,R.drawable.r11,R.drawable.r12};
 
 
-    public FragmentCareerAdviceSummary() {
+    public CareerAdviceSummaryFragment() {
 
     }
 
