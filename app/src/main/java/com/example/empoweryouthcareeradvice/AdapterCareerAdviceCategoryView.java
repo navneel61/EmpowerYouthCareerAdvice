@@ -39,25 +39,25 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Bundle bundle = new Bundle();
-        if (position != 3) {
-            CareerAdviceCategoryModel model = list.get(position);
-            holder.textTitle.setText(model.getTitle());
-            holder.imageView.setImageResource(model.getImage());
-        }
-        if (position == 3) {
-            holder.containerView.setVisibility(View.INVISIBLE);
-            holder.viewAllView.setVisibility(View.VISIBLE);
-        }
-        holder.containerView.setOnClickListener(view -> {
-            bundle.putInt("id",position);
-            Log.d("position", String.valueOf(position));
-           Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments,bundle);
-        });
-        holder.viewAllView.setOnClickListener(v -> {
-            bundle.putString("idis", title);
-            Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment,bundle);
-        });
+            Bundle bundle = new Bundle();
+            if (position != 3) {
+                CareerAdviceCategoryModel model = list.get(position);
+                holder.textTitle.setText(model.getTitle());
+                holder.imageView.setImageResource(model.getImage());
+            }
+            if (position == 3) {
+                holder.containerView.setVisibility(View.INVISIBLE);
+                holder.viewAllView.setVisibility(View.VISIBLE);
+            }
+            holder.containerView.setOnClickListener(view -> {
+                bundle.putInt("id", position);
+                Log.d("position", String.valueOf(position));
+                Navigation.findNavController(view).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceSummaryFragments, bundle);
+            });
+            holder.viewAllView.setOnClickListener(v -> {
+                bundle.putString("idis", title);
+                Navigation.findNavController(v).navigate(R.id.action_careerAdviceHomeFragment_to_careerAdviceViewAllFragment, bundle);
+            });
     }
 
     @Override
