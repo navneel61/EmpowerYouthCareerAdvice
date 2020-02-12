@@ -31,10 +31,6 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
     @Override
     public CoverLetters onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_related,parent,false);
-        if(type==1)
-        {
-
-        }
         return new CoverLetters(vie);
     }
 

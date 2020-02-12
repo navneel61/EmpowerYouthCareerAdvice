@@ -52,8 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
-        android:orientation="vertical"
-        android:padding="2dp">
+        android:orientation="vertical">
 
         <include
             layout="@layout/layout_career_advice_item"
