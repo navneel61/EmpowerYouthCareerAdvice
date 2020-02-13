@@ -52,6 +52,15 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             holder.imageViewRelated.setImageResource(model.getImage());
             holder.textViewTitleRelated.setText(model.getTitle());
         }
+        else if(type==2)
+        {
+            holder.cardView.setVisibility(View.GONE);
+            holder.cardViewRelated.setVisibility(View.VISIBLE);
+            holder.imageViewRelated.setImageResource(model.getImage());
+            holder.textViewTitleRelated.setText(model.getTitle());
+            holder.textViewBlogDescription.setText(model.getDescription());
+            holder.textViewReadArticle.setVisibility(View.GONE);
+        }
         holder.cardViewRelated.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self));
     }
 
@@ -68,6 +77,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         final TextView textViewTitle;
         final TextView textViewRead;
         final TextView textViewTitleRelated;
+        TextView textViewBlogDescription,textViewReadArticle;
         final CardView cardView;
         final CardView cardViewRelated;
         private CoverLetters(@NonNull View itemView) {
@@ -81,6 +91,8 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             imageViewRelated=itemView.findViewById(R.id.image_view_related);
             textViewTitleRelated=itemView.findViewById(R.id.title_related);
             textViewRead=itemView.findViewById(R.id.read_articles);
+            textViewBlogDescription=itemView.findViewById(R.id.datemonthyear);
+            textViewReadArticle=itemView.findViewById(R.id.read_articles);
         }
     }
 }
