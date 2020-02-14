@@ -54,13 +54,6 @@ public class AdapterCareerAdviceCategoryView extends RecyclerView.Adapter<Adapte
 
 
         if (position!=3){
-            //holder.txtDescription.setText(model.getText_Content());
-           // holder.buttonRead.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    context.startActivity(new Intent(context, ResumeTipsHireActivity.class));
-//                }
-//            });
             CareerAdviceCategoryModel model = resumeModels.get(position);
             holder.imageView.setBackgroundResource(model.getImage());
             holder.textTitle.setText(model.getTitle());
