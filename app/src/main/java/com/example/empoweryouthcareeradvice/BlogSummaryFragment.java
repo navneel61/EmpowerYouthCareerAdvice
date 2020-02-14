@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.chip.Chip;
@@ -75,6 +76,9 @@ public class BlogSummaryFragment extends Fragment {
         {
            chip=new Chip(getContext());
            chip.setText(chipnames[i]);
+            LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(10, 10, 10,20);
+            chip.setLayoutParams(lp);
             chipGroup.addView(chip);
         }
     }
