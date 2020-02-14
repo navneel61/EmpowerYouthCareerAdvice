@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,7 +30,8 @@ import butterknife.ButterKnife;
 
 
 public class BlogSummaryFragment extends Fragment {
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView,recyclerView_comment,recyclerView_reply;
+    Button button_comment,button_comment_reply;
     String [] chipnames={"HR","Human Resource","Strategic Role","Talent-Driven","Businesses","Talent","CEOs","Human resource Management","HR Manager","human Resource Planning","HR Meaning","human resource Development"};
     ChipGroup chipGroup;
     Chip chip;
@@ -45,7 +47,7 @@ public class BlogSummaryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         NavController navController= Navigation.findNavController(view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
-
+        recyclerView_comment.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
     }
     public void initviews(View view)
     {
@@ -71,8 +73,29 @@ public class BlogSummaryFragment extends Fragment {
         list.add(model3);
 
         recyclerView = view.findViewById(R.id.blog_summary).findViewById(R.id.recyclerView);
+        recyclerView_comment=view.findViewById(R.id.blog_summary).findViewById(R.id.recyclerView_comment);
+        button_comment=view.findViewById(R.id.blog_summary).findViewById(R.id.button_comment);
+
         AdapterCareerAdviceCategoryRelated adapterCareerAdviceCategoryRelated=new AdapterCareerAdviceCategoryRelated(getActivity(),list,2);
         recyclerView.setAdapter(adapterCareerAdviceCategoryRelated);
+
+        ArrayList<CareerAdviceCategoryModel> modelList=new ArrayList<>();
+        CareerAdviceCategoryModel model=new CareerAdviceCategoryModel();
+        model.setImage(R.drawable.usrimg);
+        model.setTitle("Ajay");
+        model.setDescription("good");
+        modelList.add(model);
+        button_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerView_comment.setVisibility(View.VISIBLE);
+                AdapterCommentsReply adapterCommentsReply=new AdapterCommentsReply(getActivity(),modelList);
+                recyclerView_comment.setAdapter(adapterCommentsReply);
+            }
+        });
+
+
+
         for(int i=0;i<chipnames.length;i++)
         {
            chip=new Chip(getContext());

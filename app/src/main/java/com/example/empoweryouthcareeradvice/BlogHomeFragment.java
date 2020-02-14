@@ -68,8 +68,8 @@ public class BlogHomeFragment extends Fragment {
             @Override
             public void run() {
                 progressBar.setVisibility(View.GONE);
-                imageView.setVisibility(View.VISIBLE);
-               // initCategoryView1(view);
+             //   imageView.setVisibility(View.VISIBLE);
+               initCategoryView1(view);
             }
         },3000);
     }
