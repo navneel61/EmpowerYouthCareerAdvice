@@ -18,5 +18,9 @@
         android:id="@+id/blogSummaryFragment"
         android:name="com.example.empoweryouthcareeradvice.BlogSummaryFragment"
         android:label="fragment_blog_summary"
-        tools:layout="@layout/fragment_blog_summary" />
+        tools:layout="@layout/fragment_blog_summary" >
+        <action
+            android:id="@+id/action_blogSummaryFragment_self"
+            app:destination="@id/blogSummaryFragment" />
+    </fragment>
 </navigation>

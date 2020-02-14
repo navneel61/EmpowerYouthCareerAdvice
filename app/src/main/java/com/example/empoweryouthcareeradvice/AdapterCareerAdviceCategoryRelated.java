@@ -61,7 +61,14 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
             holder.textViewBlogDescription.setText(model.getDescription());
             holder.textViewReadArticle.setVisibility(View.GONE);
         }
-        holder.cardViewRelated.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self));
+        if(type==0 || type==1)
+        {
+            holder.cardViewRelated.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_careerAdviceSummaryFragments_self));
+        }
+        else
+        {
+            holder.cardViewRelated.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_blogSummaryFragment_self));
+        }
     }
 
     @Override

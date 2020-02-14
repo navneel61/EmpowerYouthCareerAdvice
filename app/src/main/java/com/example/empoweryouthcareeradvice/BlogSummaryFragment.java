@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -76,9 +77,6 @@ public class BlogSummaryFragment extends Fragment {
         {
            chip=new Chip(getContext());
            chip.setText(chipnames[i]);
-            LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-            lp.setMargins(10, 10, 10,20);
-            chip.setLayoutParams(lp);
             chipGroup.addView(chip);
         }
     }
