@@ -16,33 +16,33 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<AdapterCareerAdviceCategoryRelated.CoverLetters> {
+public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<AdapterCareerAdviceCategoryRelated.ViewHolder> {
 
-    private final ArrayList<CareerAdviceCategoryModel> coverLetterModels;
+    private final ArrayList<CareerAdviceCategoryModel> relatedList;
     private final int type;
 
-    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> coverLetterModels, int type)
+    public AdapterCareerAdviceCategoryRelated(Context context, ArrayList<CareerAdviceCategoryModel> relatedList, int type)
     {
-        this.coverLetterModels=coverLetterModels;
+        this.relatedList=relatedList;
         this.type=type;
     }
 
     @NonNull
     @Override
-    public CoverLetters onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vie= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_related,parent,false);
-        return new CoverLetters(vie);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_career_advice_related,parent,false);
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CoverLetters holder, int position) {
-        CareerAdviceCategoryModel model=coverLetterModels.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        CareerAdviceCategoryModel model=relatedList.get(position);
         if(type==0)
         {
             holder.imageViewC.setImageResource(model.getImage());
             holder.textViewTitle.setText(model.getTitle());
             holder.textViewDescription.setText(model.getDescription());
-            Log.d("type0size", String.valueOf(coverLetterModels.size()));
+            Log.d("type0size", String.valueOf(relatedList.size()));
             holder.textViewRead.setVisibility(View.GONE);
         }
         else if(type==1)
@@ -73,10 +73,10 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
 
     @Override
     public int getItemCount() {
-        return coverLetterModels.size();
+        return relatedList.size();
     }
 
-    public class CoverLetters extends RecyclerView.ViewHolder
+    public class ViewHolder extends RecyclerView.ViewHolder
     {
         final ImageView imageViewRelated;
         final ImageView imageViewC;
@@ -87,7 +87,7 @@ public class AdapterCareerAdviceCategoryRelated extends RecyclerView.Adapter<Ada
         TextView textViewBlogDescription,textViewReadArticle;
         final CardView cardView;
         final CardView cardViewRelated;
-        private CoverLetters(@NonNull View itemView) {
+        private ViewHolder(@NonNull View itemView) {
 
             super(itemView);
             imageViewC=itemView.findViewById(R.id.image_view);

@@ -14,25 +14,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterCommentsReply extends RecyclerView.Adapter<AdapterCommentsReply.commentsreply>{
+public class AdapterCommentsReply extends RecyclerView.Adapter<AdapterCommentsReply.ViewHolder>{
     Context context;
-    ArrayList<CareerAdviceCategoryModel> modelList;
-    View v;
-    public AdapterCommentsReply(Context context,ArrayList<CareerAdviceCategoryModel> modelList) {
+    ArrayList<CareerAdviceCategoryModel> commentsList;
+    public AdapterCommentsReply(Context context,ArrayList<CareerAdviceCategoryModel> commentsList) {
         this.context=context;
-        this.modelList=modelList;
+        this.commentsList=commentsList;
     }
 
     @NonNull
     @Override
-    public commentsreply onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_comment_reply,parent,false);
-        return new AdapterCommentsReply.commentsreply(view);
+        return new AdapterCommentsReply.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull commentsreply holder, int position) {
-        CareerAdviceCategoryModel model=modelList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        CareerAdviceCategoryModel model=commentsList.get(position);
         holder.imageView_usr_img.setImageResource(model.getImage());
         holder.textView_usr_name.setText(model.getTitle());
         holder.textView_usr_comment.setText(model.getDescription());
@@ -54,15 +53,15 @@ public class AdapterCommentsReply extends RecyclerView.Adapter<AdapterCommentsRe
 
     @Override
     public int getItemCount() {
-        return modelList.size();
+        return commentsList.size();
     }
 
-    public class commentsreply extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView_usr_img;
         TextView textView_usr_name,textView_usr_comment;
         TextView button_reply;
         RecyclerView recyclerView_reply;
-        public commentsreply(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView_usr_img=itemView.findViewById(R.id.imageView_user_image);
             textView_usr_name=itemView.findViewById(R.id.user_name);

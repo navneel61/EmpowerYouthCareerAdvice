@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AdapterReply extends RecyclerView.Adapter<AdapterReply.ViewHolder>{
-    ArrayList<CareerAdviceCategoryModel> models;
-    public AdapterReply(ArrayList<CareerAdviceCategoryModel> models) {
-        this.models=models;
-        Log.d("models", String.valueOf(models.size()));
+    ArrayList<CareerAdviceCategoryModel> replyList;
+    public AdapterReply(ArrayList<CareerAdviceCategoryModel> replyList) {
+        this.replyList=replyList;
+        Log.d("models", String.valueOf(replyList.size()));
     }
 
     @NonNull
@@ -30,7 +30,7 @@ public class AdapterReply extends RecyclerView.Adapter<AdapterReply.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        CareerAdviceCategoryModel model=models.get(position);
+        CareerAdviceCategoryModel model=replyList.get(position);
         holder.imageView_usr_img.setImageResource(model.getImage());
         holder.textView_usr_name.setText(model.getTitle());
         holder.textView_usr_comment.setText(model.getDescription());

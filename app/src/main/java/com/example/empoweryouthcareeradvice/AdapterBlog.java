@@ -17,28 +17,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.blog> {
-    private ArrayList<CareerAdviceCategoryModel> models;
+public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.ViewHolder> {
+    private ArrayList<CareerAdviceCategoryModel> blogList;
     Context context;
     int type;
-    AdapterBlog(Context context,ArrayList<CareerAdviceCategoryModel> models,int type)
+    AdapterBlog(Context context,ArrayList<CareerAdviceCategoryModel> blogList,int type)
     {
         this.context=context;
-        this.models=models;
+        this.blogList=blogList;
         this.type=type;
     }
     @NonNull
     @Override
-    public blog onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_blog,parent,false);
-        return new AdapterBlog.blog(view);
+        return new AdapterBlog.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull blog holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if(type==0)
         {
-            CareerAdviceCategoryModel model=models.get(position);
+            CareerAdviceCategoryModel model=blogList.get(position);
             holder.imageView.setImageResource(model.getImage());
             holder.textView.setText(model.getTitle());
         }
@@ -46,7 +46,7 @@ public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.blog> {
         {
             if(position<3)
             {
-                CareerAdviceCategoryModel model=models.get(position);
+                CareerAdviceCategoryModel model=blogList.get(position);
                 holder.imageView.setImageResource(model.getImage());
                 holder.textView.setText(model.getTitle());
             }
@@ -66,17 +66,17 @@ public class AdapterBlog extends RecyclerView.Adapter<AdapterBlog.blog> {
 
     @Override
     public int getItemCount() {
-        return type == 0 ? models.size() : 4;
+        return type == 0 ? blogList.size() : 4;
 
     }
 
-    public class blog extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
         ConstraintLayout containerView;
         RelativeLayout viewAllView;
         CardView cardView;
-        public blog(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.image_view);
             textView=itemView.findViewById(R.id.text_view_title);

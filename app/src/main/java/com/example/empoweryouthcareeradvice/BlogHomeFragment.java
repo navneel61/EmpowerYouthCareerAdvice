@@ -41,6 +41,11 @@ public class BlogHomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_blog_home, container, false);
         ButterKnife.bind(this, view);
 
+        container1=view.findViewById(R.id.featured_blog);
+        View viewPageNotFound = container1.findViewById(R.id.progressing);
+        recyclerView1 = container1.findViewById(R.id.recyclerView);
+        progressBar=viewPageNotFound.findViewById(R.id.progressBar);
+        imageView=viewPageNotFound.findViewById(R.id.imageView_page_not_found);
         initCategoryView2(view);
         initCategoryView3(view);
         initCategoryView4(view);
@@ -51,11 +56,7 @@ public class BlogHomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        container1=view.findViewById(R.id.featured_blog);
-        View viewPageNotFound = container1.findViewById(R.id.progressing);
-        recyclerView1 = container1.findViewById(R.id.recyclerView);
-        progressBar=viewPageNotFound.findViewById(R.id.progressBar);
-        imageView=viewPageNotFound.findViewById(R.id.imageView_page_not_found);
+
 
         recyclerView1.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
