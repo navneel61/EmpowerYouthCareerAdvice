@@ -21,12 +21,13 @@ public class AdapterCareerAdviceBlog extends RecyclerView.Adapter<AdapterCareerA
 
     private final ArrayList<CareerAdviceCategoryModel> blogs;
     int type;
+    Context context;
     //final String title;
     //OnItemClick onItemClick;
     //NavController navController;
 
     public AdapterCareerAdviceBlog(Context context, ArrayList<CareerAdviceCategoryModel> blogs,int type)
-    {
+    {    this.context=context;
         this.blogs=blogs;
         this.type=type;
 
@@ -37,14 +38,12 @@ public class AdapterCareerAdviceBlog extends RecyclerView.Adapter<AdapterCareerA
     @NonNull
     @Override
     public AdapterCareerAdviceBlog.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AdapterCareerAdviceBlog.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_blog_home,
+        return new AdapterCareerAdviceBlog.ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_blog_home,
                 parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // Bundle bundle=new Bundle();
-
 
         if (type == 0) {
             CareerAdviceCategoryModel model = blogs.get(position);
@@ -66,7 +65,7 @@ public class AdapterCareerAdviceBlog extends RecyclerView.Adapter<AdapterCareerA
     }
     @Override
     public int getItemCount() {
-        return type==0?blogs.size():4;
+        return type==0 ? blogs.size():4;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

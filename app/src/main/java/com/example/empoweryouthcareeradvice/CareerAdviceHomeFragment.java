@@ -79,12 +79,6 @@ public class CareerAdviceHomeFragment extends Fragment {
         recyclerView10.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         recyclerView11.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         recyclerView12.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
-
-
-
-        //recyclerView1.setAdapter(new AdapterCareerAdviceCategoryView());
-        //recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
-        //recyclerView2.setAdapter(new AdapterCareerAdviceCategoryView());
     }
     private void initviews1(View view)
 

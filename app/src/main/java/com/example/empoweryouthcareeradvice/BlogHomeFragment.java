@@ -46,6 +46,7 @@ public class BlogHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blog_home, container, false);
         ButterKnife.bind(this, view);
+
         //initviews1(view);
         initviews2(view);
         initviews3(view);
@@ -76,8 +77,8 @@ public class BlogHomeFragment extends Fragment {
             @Override
             public void run() {
                 progressBar.setVisibility(View.GONE);
-                imageView.setVisibility(View.VISIBLE);
-                //initviews1(view);
+                //imageView.setVisibility(View.VISIBLE);
+                initviews1(view);
 
             }
         },3000);
@@ -92,8 +93,8 @@ public class BlogHomeFragment extends Fragment {
             model.setTitle(featuredBlogList[i]);
             list.add(model);
         }
-//        imageView=view.findViewById(R.id.featured_blog).findViewById(R.id.imageviewBlog);
-//        textView1=view.findViewById(R.id.featured_blog).findViewById(R.id.text_view_title_blog);
+      imageView=view.findViewById(R.id.featured_blog).findViewById(R.id.imageviewBlog);
+        textView1=view.findViewById(R.id.featured_blog).findViewById(R.id.text_view_title_blog);
 
         AdapterCareerAdviceBlog adapterCareerAdviceBlog=new AdapterCareerAdviceBlog(getActivity(),list,0);
         recyclerView1.setAdapter(adapterCareerAdviceBlog);
@@ -109,7 +110,6 @@ public class BlogHomeFragment extends Fragment {
             list.add(model);
         }
         recyclerView2= view.findViewById(R.id.otherBlog_whats_new).findViewById(R.id.recyclerViewBlog);
-        //imageView=view.findViewById(R.id.otherBlog_whats_new).findViewById(R.id.imageviewBlog);
         textView1=view.findViewById(R.id.otherBlog_whats_new).findViewById(R.id.text_view_title);
         textView1.setText("What's New");
 

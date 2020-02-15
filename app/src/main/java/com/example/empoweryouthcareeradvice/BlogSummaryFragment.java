@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -26,14 +27,11 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class BlogSummaryFragment extends Fragment {
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView,recyclerViewComment,recyclerViewReply;
+    Button btnComment;
     String[] chipnames={"HR","Human Resource","Strategic Role","Talent-Driven","Businesses","Talent","CEOs","Human resource Management","HR Manager","human Resource Planning","HR Meaning","human resource Development"};
     ChipGroup chipGroup;
     Chip chip;
-
-    public BlogSummaryFragment() {
-        // Required empty public constructor
-    }
 
 
     @Override
@@ -47,8 +45,8 @@ public class BlogSummaryFragment extends Fragment {
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //NavController navController= Navigation.findNavController(view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        recyclerViewComment.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
 
     }
 
@@ -76,6 +74,26 @@ public class BlogSummaryFragment extends Fragment {
         list.add(model3);
 
         recyclerView = view.findViewById(R.id.blog_summary).findViewById(R.id.recyclerView);
+        recyclerViewComment=view.findViewById(R.id.blog_summary).findViewById(R.id.recyclerView_comment);
+        btnComment=view.findViewById(R.id.blog_summary).findViewById(R.id.button_comment);
+
+        ArrayList<CareerAdviceCategoryModel> modelList=new ArrayList<>();
+        CareerAdviceCategoryModel model=new CareerAdviceCategoryModel();
+        model.setImage(R.drawable.username);
+        model.setTitle("Ajay");
+        model.setDescription("good");
+        modelList.add(model);
+        btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerViewComment.setVisibility(View.VISIBLE);
+
+                AdapterCommentsReply adapterCommentsReply=new AdapterCommentsReply(getActivity(),modelList);
+                recyclerViewComment.setAdapter(adapterCommentsReply);
+            }
+        });
+
+
         AdapterCareerAdviceCategoryRelated adapterCareerAdviceCategoryRelated=new AdapterCareerAdviceCategoryRelated(getActivity(),list,2);
         recyclerView.setAdapter(adapterCareerAdviceCategoryRelated);
         for(int i=0;i<chipnames.length;i++)

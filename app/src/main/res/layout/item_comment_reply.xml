@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_user_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+                <ImageView
+                    android:id="@+id/imageview_user"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:layout_margin="16dp" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textviewtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/bevan"
+                android:layout_gravity="center"
+                android:layout_marginEnd="40dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Name"
+                app:layout_constraintBottom_toTopOf="@id/textComment"
+                app:layout_constraintTop_toTopOf="@id/image_category_icon"
+                app:layout_constraintBottom_toBottomOf="@id/image_category_icon"
+                app:layout_constraintStart_toEndOf="@id/image_category_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="comment replies"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="150dp"
+                android:id="@+id/textComment"
+                app:layout_constraintTop_toBottomOf="@id/cardview_user_image"
+                android:paddingTop="40dp"
+                app:layout_constraintStart_toEndOf="@id/imageview_user"
+                android:textSize="20sp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonReply"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="90dp"
+                android:text="Reply"
+                app:layout_constraintTop_toTopOf="@id/textviewtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableStart="@drawable/ic_reply_black_24dp"
+                app:layout_constraintTop_toBottomOf="@id/textComment"
+
+                />
+        </androidx.cardview.widget.CardView>m
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/repliesRecyclerView"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_view_image"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
